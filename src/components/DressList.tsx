@@ -1,20 +1,18 @@
 import type { DressItemType } from "../types/DressItemType"
 import DressItem from "./DressItem"
 
-
 interface DressListProps {
-    items:DressItemType[];
+  items: DressItemType[];
 }
 
-const DressList = ({items}:DressListProps) => {
+const DressList = ({ items }: DressListProps) => {
   return (
-    <div>
-        {items.map((item) =>(
-            <DressItem
-            key={item.id}
-            product={item}
-            />
-        ))}
+    <div className="flex justify-center gap-6 w-full">
+      {items.map((item) => (
+        <div key={item.id} >
+          <DressItem product={item} />
+        </div>
+      ))}
     </div>
   )
 }
