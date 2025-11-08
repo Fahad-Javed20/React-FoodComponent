@@ -6,7 +6,7 @@ interface DressItemProps {
 
 const DressItem = ({ product }: DressItemProps) => {
   return (
-    <div className="flex flex-col items-center gap-4 bg-white rounded-xl shadow-md p-4 w-[400px]">
+    <div className="flex flex-col items-center gap-4 bg-white rounded-xl p-4 w-[400px] hover:shadow-lg/30 ">
       <img
         className="h-[380px] w-full object-cover rounded-lg"
         src={product.picture}
@@ -25,12 +25,16 @@ const DressItem = ({ product }: DressItemProps) => {
 
     
       <div className="flex gap-1 mt-2 self-start">
-        <div className="size-6 rounded-full bg-gray-200 flex items-center justify-center text-sm cursor-pointer hover:bg-gray-300">2</div>
-        <div className="size-6 rounded-full bg-gray-200 flex items-center justify-center text-sm cursor-pointer hover:bg-gray-300">4</div>
-        <div className="size-6 rounded-full bg-gray-200 flex items-center justify-center text-sm cursor-pointer hover:bg-gray-300">6</div>
-        <div className="size-6 rounded-full bg-gray-200 flex items-center justify-center text-sm cursor-pointer hover:bg-gray-300">8</div>
-        <div className="size-6 rounded-full bg-gray-200 flex items-center justify-center text-sm cursor-pointer hover:bg-gray-300">10</div>
+
+        {[2,4,6,8,10].map(num =>(
+            <div
+             className="size-6 rounded-full bg-gray-200 flex items-center justify-center text-sm cursor-pointer hover:bg-gray-300">
+             {num}
+             </div>
+        ))}
       </div>
+
+      
     </div>
   );
 };

@@ -7,7 +7,7 @@ interface DressListProps {
 
 const DressList = ({ items }: DressListProps) => {
   return (
-    <div className="flex justify-center gap-6 w-full">
+    <div className="flex justify-around w-full">
       {items.map((item) => (
         <div key={item.id} >
           <DressItem product={item} />
